@@ -49,7 +49,12 @@
 #### Los enums permiten a un desarrollador definir un conjunto de constantes con nombre.
 
 ## Guard: 
-#### Hay veces que queremos que determinadas áreas de nuestra aplicación web estén protegidas y solo puedan ser accedidas si el usuario ésta logueado (un panel de control por ejemplo) o incluso que solo puedan ser accedidas por determinados tipos de usuarios. Para conseguir esto con Angular se usan los guards. 
+#### Hay veces que queremos que determinadas áreas de nuestra aplicación web estén protegidas y solo puedan ser accedidas si el usuario ésta logueado (un panel de control por ejemplo) o incluso que solo puedan ser accedidas por determinados tipos de usuarios. Para conseguir esto con Angular se usan los guards. Dentro de los guards hay 4 tipos principales:
+
+- CanActivate: Mira si el usuario puede acceder a una página determinada.
+- CanActivateChild: Mira si el usuario puede acceder a las páginas hijas de una determinada ruta.
+- CanDeactivate: Mira si el usuario puede salir de una página, es decir, podemos hacer que aparezca un mensaje, por ejemplo, de comfirmación, si el usuario tiene cambios sin guardar.
+- CanLoad: Sirve para evitar que la aplicación cargue los módulos perezosamente si el usuario no está autorizado a hacerlo.
 
 ## Interface:
 ####

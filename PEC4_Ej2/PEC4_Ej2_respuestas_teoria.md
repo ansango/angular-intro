@@ -2,7 +2,7 @@
 
 1. ¿Qué comando debes utilizar para crear un nuevo proyecto Angular utilizando Angular CLI denominado vinoteca? (A las preguntas que te haga Angular CLI puedes contestar utilizando las opciones por defecto). Explica brevemente la estructura y ficheros que ha generado Angular CLI:
 
-Para crear un nuevo proyecto en Angular utilizamos el comando ng new "nombre del proyecto", para arrancarlo por defecto con ng serve o npm start
+    Para crear un nuevo proyecto en Angular utilizamos el comando ng new "nombre del proyecto", para arrancarlo por defecto con ng serve o npm start
 
    - Ficheros de configuración en la raíz del proyecto:
 

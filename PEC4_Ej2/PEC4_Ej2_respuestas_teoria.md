@@ -27,3 +27,6 @@
 
    - app.module.ts - @NgModule (declarations, imports, providers, bootstrap).
    - app.component.ts - @Component (selector, templateUrl, styleUrls).
+
+3. ¿Es posible poder inyectar el template y los estilos en línea de un componente sin necesidad de especificarlos en templateUrl, styleUrls? ¿Es recomendable hacer esto?
+

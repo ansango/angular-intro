@@ -15,7 +15,8 @@
 - ng test: Ejecuta los test unitarios en un proyecto.
 - ng version: Muestra por consola la versión de Angular Cli.
 
-## Component: Un componente en Angular es un elemento que está compuesto por:
+## Component: 
+### Un componente en Angular es un elemento que está compuesto por:
 
 - Un archivo que será nuestro Template (app.component.html).
 - Un archivo de lógica, la cual es la que pondremos en un archivo .ts (como por ejemplo app.component.ts).
@@ -43,8 +44,10 @@
     - ngComponentOutlet: nos permite crear componentes dinámicos.
   - Componentes: Las Directivas de Componente son directivas con un Template. Los componentes tienen decoradores “@Component”, el componente es un decorador @Directive que es extendido con características propias de los templates.
 
-## Enum:
-## Guard:
+## Enum: Los enums permiten a un desarrollador definir un conjunto de constantes con nombre.
+
+## Guard: Hay veces que queremos que determinadas áreas de nuestra aplicación web estén protegidas y solo puedan ser accedidas si el usuario ésta logueado (un panel de control por ejemplo) o incluso que solo puedan ser accedidas por determinados tipos de usuarios. Para conseguir esto con Angular se usan los guards. 
+
 ## Interface:
 ## Pipe:
 ## Service:

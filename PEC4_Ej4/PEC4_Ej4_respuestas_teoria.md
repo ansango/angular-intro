@@ -26,7 +26,7 @@
 
    Angular convertirá este código en lo siguiente:
 
-   ````
+   ```
    <ng-template ngFor let-item [ngForOf]="items" let-i="index">
         <div>({{i}}) {{item.name}}</div>
    </ng-template>
@@ -36,7 +36,7 @@
 
    tracbkby se encarga de realizar un seguimiento de los cambios en el array y que solo hice los cambios o el cambio en los items necesarios.
 
-   ````
+   ```
    <li *ngFor="let item of items;let i=index;trackBy: trackByItems">
         {{i}} - {{item.name}}
    </li>
@@ -44,13 +44,15 @@
 
    Internamente:
 
+   ```
    <ng-template ngFor let-item [ngForOf]="items" let-i="index" [ngForTrackBy]="trackByItems”>
-    <div>({{i}}) {{item.name}}</div>
+       <div>({{i}}) {{item.name}}</div>
    </ng-template>
+   ```
 
    .ts:
 
-   trackByItems(index: number, item: any): number { return item.id; }
+   `trackByItems(index: number, item: any): number { return item.id; }`
 
    "trackBy" es una función que define cómo realizar un seguimiento de los cambios para los elementos en el iterable.
 

@@ -2,7 +2,7 @@
 
 1. Explica qué son y cuándo se deberían utilizar las siguientes variables locales de la directiva estructural NgFor:
 
-La directiva ngFor es la que se encarga de presentar una lista de elementos en pantalla de una forma sencilla combinando el concepto de bucle y plantilla 
+    La directiva ngFor es la que se encarga de presentar una lista de elementos en pantalla de una forma sencilla combinando el concepto de bucle y plantilla 
 
    - index: 
    - even: 

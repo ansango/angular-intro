@@ -9,7 +9,7 @@
         class="wine-subtitle"
         [class]="wine.isOnStock() ? 'is-stock-color' : 'out-stock-color'"
         (click)="unavilableWine()"
-        >available</mat-card-subtitle
+        >{{ wine.isOnSale ? "available" : "unavilable" }}</mat-card-subtitle
       >
     </mat-card-header>
     <mat-card-content class="wine-content">
@@ -23,11 +23,13 @@
         mat-icon-button
         color="primary"
         (click)="decrement()"
-        [disabled]="counter === 0"
+        *ngIf="counter > 0"
       >
         -
       </button>
+      <!-- SELECTOR -->
       <div>{{ counter }}</div>
+      <!-- SELECTOR -->
       <button mat-icon-button color="primary" (click)="increment()">+</button>
     </mat-card-actions>
   </mat-card>

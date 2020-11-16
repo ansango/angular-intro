@@ -8,7 +8,7 @@ import Wine from '../model/wine';
   styleUrls: ['./wine-item.component.css'],
 })
 export class WineItemComponent implements OnInit {
-  public counter: number = 0;
+  public counter: number = 0;  
   public wine!: Wine;
   constructor() {}
 

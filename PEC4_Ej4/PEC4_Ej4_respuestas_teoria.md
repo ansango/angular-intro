@@ -64,25 +64,26 @@
 
 3. ¿Es posible ejecutar dos directivas estructurales simultáneamente? Explica la razón tanto si es si posible como si no lo es.
 
-Puede que necesitemos ejecutar un *ngFor en una plantilla, pero sólo si se cumple alguna condición. Lo lógico o instintivamente podría ser añadir tanto *ngFor como \*ngIf en el mismo elemento. Angular no lo permite.
+   Puede que necesitemos ejecutar un *ngFor en una plantilla, pero sólo si se cumple alguna condición. Lo lógico o instintivamente podría ser añadir tanto *ngFor como \*ngIf en el mismo elemento. Angular no lo permite.
 
-Por ejemplo tenemos:
+   Por ejemplo tenemos:
 
-```
-<div *ngFor="let stock of stocks" *ngIf="stock.active">
- <!-- active items -->
-</div>
-```
-Aquí queremos ejecutar primero ngFor y luego decir si es el item está activo antes de mostrarlo:
+   ```
+   <div *ngFor="let stock of stocks" *ngIf="stock.active">
+   <!-- active items -->
+   </div>
+   ```
 
-```
-<div *ngFor="let stock of stocks" *ngIf="stock.active">
- <!-- active items -->
-</div>
-```
+   Aquí queremos ejecutar primero ngFor y luego decir si es el item está activo antes de mostrarlo:
 
-Ambos casos parecen muy similares, pero la intención y las expectativas son muy diferentes. En el primer caso, esperamos que el *ngFor se ejecute primero seguido del *ngIf, y viceversa en el segundo caso.
+   ```
+   <div *ngFor="let stock of stocks" *ngIf="stock.active">
+   <!-- active items -->
+   </div>
+   ```
 
-No es inmediatamente obvio cuál de los dos debe ejecutarse primero. En lugar de crear un orden innato de que una directiva se ejecute antes que la otra, Angular lo simplifica al no permitirlo en el mismo elemento.
+   Ambos casos parecen muy similares, pero la intención y las expectativas son muy diferentes. En el primer caso, esperamos que el *ngFor se ejecute primero seguido del *ngIf, y viceversa en el segundo caso.
 
-En este caso, se recomienda utilizar sólo elementos de envoltura para ser explícito sobre el orden en que se ejecutan estas directivas estructurales.
+   No es inmediatamente obvio cuál de los dos debe ejecutarse primero. En lugar de crear un orden innato de que una directiva se ejecute antes que la otra, Angular lo simplifica al no permitirlo en el mismo elemento.
+
+   En este caso, se recomienda utilizar sólo elementos de envoltura para ser explícito sobre el orden en que se ejecutan estas directivas estructurales.

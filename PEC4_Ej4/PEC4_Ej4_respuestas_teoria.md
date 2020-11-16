@@ -1,4 +1,4 @@
-# PEC4_Ej2_respuestas_teoria1.
+# PEC4_Ej4_respuestas_teoria.
 
 1. Explica qué son y cuándo se deberían utilizar las siguientes variables locales de la directiva estructural NgFor:
 

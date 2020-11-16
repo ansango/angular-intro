@@ -10,33 +10,37 @@
    - even: valor que indica si este elemento tiene un índice par.
    - odd: valor booleano que indica si este elemento tiene un índice impar.
 
-    <li *ngFor="let item of items;let i=index">{{i}} - {{item.name}}</li>
+   `<li *ngFor="let item of items;let i=index">{{i}} - {{item.name}}</li>`
 
    Podemos usar estas variables para enlazar con las clases CSS, o mostrarlas en la interfaz de usuario, o ejecutar cualquier otro cálculo que queramos. Por ejemplo, podemos añadir el elemento par de la clase CSS a cada elemento del índice par:
 
-   [css.even-item]="isEven"
+   `[css.even-item]="isEven"`
 
    donde even se asigna a la variable isEven en la microsintaxis NgFor es como:
 
-   \*ngFor="let stock of stocks; even as isEven; index as i"
+   `*ngFor="let stock of stocks; even as isEven; index as i"`
 
 2. ¿Para qué sirve la opción trackBy de la directiva estructural NgFor? Pon ejemplos de uso.
 
-   <li *ngFor="let item of items;let i=index">{{i}} - {{item.name}}</li>
+   `<li *ngFor="let item of items;let i=index">{{i}} - {{item.name}}</li>`
 
    Angular convertirá este código en lo siguiente:
 
+   ````
    <ng-template ngFor let-item [ngForOf]="items" let-i="index">
-   <div>({{i}}) {{item.name}}</div>
+        <div>({{i}}) {{item.name}}</div>
    </ng-template>
+   ```
 
-   Internamente cada vez se añada, se modifique o se elimine un item del array, Angular a través de la directiva \*ngFor volverá a redibujar completemente el DOM desde cero. Y esto es una operación costosa.
+   Internamente cada vez se añada, se modifique o se elimine un item del array, Angular a través de la directiva ngFor volverá a redibujar completemente el DOM desde cero. Y esto es una operación costosa.
 
    tracbkby se encarga de realizar un seguimiento de los cambios en el array y que solo hice los cambios o el cambio en los items necesarios.
 
+   ````
    <li *ngFor="let item of items;let i=index;trackBy: trackByItems">
-       {{i}} - {{item.name}}
+        {{i}} - {{item.name}}
    </li>
+   ```
 
    Internamente:
 

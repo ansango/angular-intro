@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Food from '../model/food';
 import Wine from '../model/wine';
 
 @Component({
@@ -17,7 +18,11 @@ export class WineItemComponent implements OnInit {
       '../../assets/wines/protos.png',
       10,
       2,
-      true
+      true,
+      [
+        new Food('solomillo', 500, false, false),
+        new Food('patatas', 300, true, false),
+      ]
     );
     this.counter = 0;
   }

@@ -6,14 +6,14 @@ export default class Wine {
     public price: number,
     public quantityInCart: number,
     public isOnSale: boolean,
-    //public foodParing: Food[]
+    public foodParing: Food[]
   ) {
     this.name = name;
     this.imgUrl = imgUrl;
     this.price = price;
     this.quantityInCart = quantityInCart;
     this.isOnSale = isOnSale;
-    //this.foodParing = foodParing;
+    this.foodParing = foodParing;
   }
 
   isOnStock(){

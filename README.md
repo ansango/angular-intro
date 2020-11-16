@@ -1,2 +1,2 @@
-# angular_intro
+# angular-intro
 Frameworks: Introducción a Angular

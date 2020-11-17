@@ -8,8 +8,10 @@ import Wine from '../model/wine';
   styleUrls: ['./wine-item.component.css'],
 })
 export class WineItemComponent implements OnInit {
-  public counter: number = 0;  
+  public counter!: number;
   public wine!: Wine;
+  public units!: number[];
+
   constructor() {}
 
   ngOnInit(): void {
@@ -25,6 +27,7 @@ export class WineItemComponent implements OnInit {
       ]
     );
     this.counter = 0;
+    //this.units = [1,2,3,4,5,6];
   }
 
   unavilableWine(): void {

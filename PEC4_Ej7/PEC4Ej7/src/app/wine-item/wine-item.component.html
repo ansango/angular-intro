@@ -28,7 +28,10 @@
         -
       </button>
       <!-- SELECTOR -->
-      <mat-select [(ngModel)]="counter">
+      <mat-select
+        [ngModel]="counter"
+        (ngModelChange)="quantityWineChange($event)"
+      >
         <mat-option *ngFor="let unit of units" [value]="unit">
           {{ unit }}
         </mat-option>

@@ -9,9 +9,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
+import { WineListComponent } from './wine-list/wine-list.component';
 
 @NgModule({
-  declarations: [AppComponent, WineItemComponent],
+  declarations: [AppComponent, WineItemComponent, WineListComponent],
   imports: [
     BrowserModule,
     FormsModule,

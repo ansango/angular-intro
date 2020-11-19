@@ -1,31 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import Food from '../model/food';
 import Wine from '../model/wine';
 
+export interface WineQuantityChange {
+  wine: Wine;
+  quantity: number;
+}
 @Component({
   selector: 'app-wine-item',
   templateUrl: './wine-item.component.html',
   styleUrls: ['./wine-item.component.css'],
 })
 export class WineItemComponent implements OnInit {
+  @Input() public wine!: Wine;
+  @Output() private wineQuantityChangeEvent: EventEmitter<
+    WineQuantityChange
+  > = new EventEmitter<WineQuantityChange>();
   public counter: number = 0;
-  public wine!: Wine;
   public units!: number[];
 
   constructor() {}
 
   ngOnInit(): void {
-    this.wine = new Wine(
-      'Protos',
-      '../../assets/wines/protos.png',
-      10,
-      2,
-      true,
-      [
-        new Food('solomillo', 500, false, false),
-        new Food('patatas', 300, true, false),
-      ]
-    );
     this.counter = 0;
     this.units = [
       1,
@@ -61,5 +57,13 @@ export class WineItemComponent implements OnInit {
   decrement(): void {
     if (this.counter === 0) return;
     this.counter--;
+  }
+
+  quantityWineChange(event: number) {
+    this.counter = event;
+    this.wineQuantityChangeEvent.emit({
+      quantity: this.counter,
+      wine: this.wine,
+    });
   }
 }

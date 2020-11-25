@@ -1,15 +1,16 @@
 <div>
   <mat-card
     class="wine-card"
-    [class]="wine.isOnStock() ? 'is-stock-shadow' : 'out-stock-shadow'"
+    [class]="wine.quantityInCart > 0 ? 'is-stock-shadow' : 'out-stock-shadow'"
   >
     <mat-card-header>
       <mat-card-title>{{ wine.name }}</mat-card-title>
       <mat-card-subtitle
         class="wine-subtitle"
-        [class]="wine.isOnStock() ? 'is-stock-color' : 'out-stock-color'"
-        (click)="unavilableWine()"
-        >{{ wine.isOnSale ? "available" : "unavilable" }}</mat-card-subtitle
+        [class]="wine.quantityInCart > 0 ? 'is-stock-color' : 'out-stock-color'"
+        >{{
+          wine.quantityInCart > 0 ? "available" : "unavilable"
+        }}</mat-card-subtitle
       >
     </mat-card-header>
     <mat-card-content class="wine-content">
@@ -23,21 +24,21 @@
         mat-icon-button
         color="primary"
         (click)="decrement()"
-        *ngIf="counter > 0"
+        *ngIf="wine.quantityInCart > 0"
       >
         -
       </button>
-      <!-- SELECTOR -->
+      
       <mat-select
-        [ngModel]="counter"
+        [ngModel]="wine.quantityInCart"
         (ngModelChange)="quantityWineChange($event)"
       >
         <mat-option *ngFor="let unit of units" [value]="unit">
           {{ unit }}
         </mat-option>
       </mat-select>
-      <!-- SELECTOR -->
-      <div>{{ counter }}</div>
+      
+      <div>{{ wine.quantityInCart }}</div>
 
       <button mat-icon-button color="primary" (click)="increment()">+</button>
     </mat-card-actions>

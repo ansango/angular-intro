@@ -10,28 +10,27 @@ import { WineQuantityChange } from '../wine-item/wine-item.component';
 })
 export class WineListComponent implements OnInit {
   public wines!: Wine[];
-
   constructor() {}
 
   ngOnInit(): void {
     this.wines = [
-      new Wine(1, 'Protos', '../../assets/wines/protos.png', 10, 2, true, [
+      new Wine(1, 'Protos', '../../assets/wines/protos.png', 10, 0, true, [
         new Food('solomillo', 500, false, false),
         new Food('patatas', 300, true, false),
       ]),
-      new Wine(2, 'Verdejo', '../../assets/wines/protos.png', 10, 2, true, [
+      new Wine(2, 'Verdejo', '../../assets/wines/protos.png', 10, 0, true, [
         new Food('solomillo', 500, false, false),
         new Food('patatas', 300, true, false),
       ]),
-      new Wine(3, 'Rueda', '../../assets/wines/protos.png', 10, 2, true, [
+      new Wine(3, 'Rueda', '../../assets/wines/protos.png', 10, 0, true, [
         new Food('solomillo', 500, false, false),
         new Food('patatas', 300, true, false),
       ]),
-      new Wine(4, 'Rosado', '../../assets/wines/protos.png', 10, 2, true, [
+      new Wine(4, 'Rosado', '../../assets/wines/protos.png', 10, 0, true, [
         new Food('solomillo', 500, false, false),
         new Food('patatas', 300, true, false),
       ]),
-      new Wine(5, 'Tinto', '../../assets/wines/protos.png', 10, 2, true, [
+      new Wine(5, 'Tinto', '../../assets/wines/protos.png', 10, 0, true, [
         new Food('solomillo', 500, false, false),
         new Food('patatas', 300, true, false),
       ]),

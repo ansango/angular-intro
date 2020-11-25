@@ -22,47 +22,24 @@ export class WineItemComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.counter = 0;
-    this.units = [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19,
-      20,
-    ];
-  }
-
-  unavilableWine(): void {
-    this.wine.isOnSale = !this.wine.isOnSale;
+    this.wine.quantityInCart = 0;
   }
 
   increment(): void {
-    this.counter++;
+    this.wine.quantityInCart++;
   }
   decrement(): void {
-    if (this.counter === 0) return;
-    this.counter--;
+    if (this.wine.quantityInCart === 0) {
+      this.wine.isOnSale = false;
+      return;
+    }
+    this.wine.quantityInCart--;
   }
 
   quantityWineChange(event: number) {
-    this.counter = event;
+    this.wine.quantityInCart = event;
     this.wineQuantityChangeEvent.emit({
-      quantity: this.counter,
+      quantity: this.wine.quantityInCart,
       wine: this.wine,
     });
   }

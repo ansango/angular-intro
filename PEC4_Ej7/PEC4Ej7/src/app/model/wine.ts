@@ -6,11 +6,7 @@ export default class Wine {
     public imgUrl: string,
     public price: number,
     public quantityInCart: number,
-    public isOnSale: boolean,
+    public isOnSale: boolean,    
     public foodParing: Food[]
   ) {}
-
-  isOnStock() {
-    return this.isOnSale === true;
-  }
 }

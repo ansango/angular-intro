@@ -29,15 +29,6 @@
         -
       </button>
       
-      <mat-select
-        [ngModel]="wine.quantityInCart"
-        (ngModelChange)="quantityWineChange($event)"
-      >
-        <mat-option *ngFor="let unit of units" [value]="unit">
-          {{ unit }}
-        </mat-option>
-      </mat-select>
-      
       <div>{{ wine.quantityInCart }}</div>
 
       <button mat-icon-button color="primary" (click)="increment()">+</button>

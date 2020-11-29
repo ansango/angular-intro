@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import Food from '../model/food';
 import Wine from '../model/wine';
-import { WineQuantityChange } from '../wine-item/wine-item.component';
+import {
+  QuantityChange,
+  WineQuantityChange,
+} from '../wine-item/wine-item.component';
 
 @Component({
   selector: 'app-wine-list',
@@ -38,6 +41,15 @@ export class WineListComponent implements OnInit {
   }
 
   wineQuantityChange(event: WineQuantityChange) {
-    console.log(event);
+    const wineSelected = this.wines.find((wine) => wine.id === event.id);
+    if (event.quantityChange === QuantityChange.INCREMENT) {
+      if (wineSelected) {
+        wineSelected.quantityInCart++;
+      }
+    } else if (event.quantityChange === QuantityChange.DECREMENT) {
+      if (wineSelected) {
+        wineSelected.quantityInCart--;
+      }
+    }
   }
 }

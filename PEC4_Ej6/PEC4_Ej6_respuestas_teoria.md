@@ -125,3 +125,5 @@
     - ngOnDestroy: Este método se ejecutará justo antes de que Angular destruya los componentes. Es muy útil para darse de baja de los observables y desconectar los event handlers para evitar memory leaks o fugas de memoria.
 
 6.  ¿Cada componente es destruido y creado cada vez que se accede a él? Razona la respuesta.
+
+    En Angular la clase componente se instancia, cuando se instancia se llama al constructor, cuando se muestran las cosas se hace el ciclo de vida, puede ser que queramos recargar un componente sin habe ido a otra pagina, es posible que en vez de crear otra instancia, simplemente se reutilice esa instancia reutilizando el ciclo de vida.
